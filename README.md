@@ -24,7 +24,7 @@ The factory had to make powerful actions legible and controlled. A deployment sh
 ## System shape
 
 ```mermaid
-flowchart LR
+flowchart TD
     n0["Product configuration"]
     n1["Policy checks"]
     n2["Contract factory"]
