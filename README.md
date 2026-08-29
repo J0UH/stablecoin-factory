@@ -1,20 +1,22 @@
+[← All systems](https://github.com/J0UH) · [Stablecoin and programmable asset infrastructure](https://github.com/J0UH/stablecoin-infrastructure)
+
 <p align="center">
-  <img src="assets/hero.png" alt="Stablecoin factory system illustration" width="100%" />
+  <img src="assets/hero.webp" alt="A repeatable die produces identical cartridges that pass through a separate verification ring" width="100%" />
 </p>
 
-# Stablecoin factory
+# Programmable asset issuance
 
-Token issuance becomes a product only when deployment, roles, metadata, verification, and operations can be repeated without improvisation. This system joined the contracts and the operating surface around them.
-
-[Discuss a similar system](mailto:ju@jomena.group?subject=Discuss%20Stablecoin%20factory) | [Book a technical call](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Stablecoin%20factory)
+The same issuance discipline can support fiat-linked money, precious metals, energy, agricultural commodities, and other capital-market assets. The asset changes; the need for clear rules, authority, metadata, verification, and operations does not.
 
 ## The engineering problem
 
-The factory had to make powerful actions legible and controlled. A deployment should be reproducible. Authority should be explicit. Operators should know what happened, which network it happened on, and what remains to be completed.
+Issuance has to preserve the meaning of the asset while making powerful actions legible and controlled. A release should be reproducible, authority should be explicit, and operators should know what happened, where it happened, and what remains.
+
+
 
 ## What the system covers
 
-- Configurable token creation
+- Configurable fiat, commodity, metal, and capital-market assets
 - Deployment and verification workflows
 - Role and authority setup
 - Metadata and public integration artifacts
@@ -25,17 +27,17 @@ The factory had to make powerful actions legible and controlled. A deployment sh
 
 ```mermaid
 flowchart TD
-    n0["Product configuration"]
-    n1["Policy checks"]
-    n2["Contract factory"]
-    n3["Network deployment"]
-    n4["Verification"]
-    n5["Operations"]
-    n0 --> n1
-    n1 --> n2
-    n2 --> n3
-    n3 --> n4
-    n4 --> n5
+accTitle: Programmable asset issuance
+accDescr: Product configuration must pass policy and authority checks before deployment. Verification either records the release and enables operator controls or stops the workflow for investigation.
+    config["Product configuration"] --> policy{"Policy and authority"}
+    policy -->|Approved| factory["Contract factory"]
+    policy -->|Rejected| revise["Revise configuration"]
+    revise --> config
+    factory --> deploy["Network deployment"]
+    deploy --> verify{"Artifact verification"}
+    verify -->|Passed| metadata["Metadata and records"]
+    verify -->|Failed| stop["Stop and investigate"]
+    metadata --> operations["Operator controls"]
 ```
 
 ## Build notes
@@ -44,8 +46,8 @@ flowchart TD
 - Separate product configuration from network execution.
 - Make authority visible before an operator confirms an irreversible action.
 
-<sub>Built under the Aryze umbrella. The underlying source and company IP remain private and owned by Aryze. Delivery involved people across engineering, product, operations, compliance, and design. Open-source foundations retain their original attribution and licences.</sub>
+<sub>Public overview only. Source code, customer data, credentials, and private operating details are not included.</sub>
 
 ## Talk through a similar problem
 
-If you are trying to build, untangle, or ship a system in this area, [send me a note](mailto:ju@jomena.group?subject=I%20need%20help%20with%20Stablecoin%20factory). If the problem needs a deeper technical conversation, [book a call by email](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Stablecoin%20factory).
+Working on something similar? [Tell me about it](mailto:ju@jomena.group?subject=Programmable%20asset%20issuance).
