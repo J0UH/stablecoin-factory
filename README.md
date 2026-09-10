@@ -1,20 +1,24 @@
-[← All systems](https://github.com/J0UH) · [Stablecoin and programmable asset infrastructure](https://github.com/J0UH/stablecoin-infrastructure)
-
-<p align="center">
-  <img src="assets/hero.webp" alt="A repeatable die produces identical cartridges that pass through a separate verification ring" width="100%" />
-</p>
+[← All work](https://github.com/J0UH) · [Stablecoin and programmable asset infrastructure](https://github.com/J0UH/stablecoin-infrastructure)
 
 # Programmable asset issuance
 
-The same issuance discipline can support fiat-linked money, precious metals, energy, agricultural commodities, and other capital-market assets. The asset changes; the need for clear rules, authority, metadata, verification, and operations does not.
+A repeatable issuance process for programmable money, commodities, and other tokenised assets.
 
-## The engineering problem
+<img src="assets/hero-v2.webp" alt="Programmable asset issuance illustrated as a crafted architectural model, with exposed sketch and structural framing" width="100%" />
 
-Issuance has to preserve the meaning of the asset while making powerful actions legible and controlled. A release should be reproducible, authority should be explicit, and operators should know what happened, where it happened, and what remains.
+Issuing a different kind of asset changes the product's meaning, but many of the operational questions remain. Which rules apply? Who can act? What was deployed, and how can someone verify it?
 
+This work turns issuance into a recorded workflow. Product configuration, network execution, metadata, and authority setup need a clear relationship before a release begins.
 
+## Making a launch reproducible
 
-## What the system covers
+The system covers configuration for different asset types, deployment and verification, role setup, public integration artifacts, and the environments used to support them.
+
+I keep the product definition separate from the act of executing it on a network. That makes it easier to review the intended asset before an operator takes a consequential step.
+
+The result of the workflow needs enough information to explain what happened and what remains. A repeatable process gives the next operator a starting point and makes a later verification less dependent on the person who ran the release.
+
+## What the work covers
 
 - Configurable fiat, commodity, metal, and capital-market assets
 - Deployment and verification workflows
@@ -23,7 +27,8 @@ Issuance has to preserve the meaning of the asset while making powerful actions 
 - Test funding and environment support
 - Operator-facing issuance controls
 
-## System shape
+<details>
+<summary>A closer look at the technical flow</summary>
 
 ```mermaid
 flowchart TD
@@ -40,14 +45,14 @@ accDescr: Product configuration must pass policy and authority checks before dep
     metadata --> operations["Operator controls"]
 ```
 
-## Build notes
+</details>
 
-- Turn deployment into a recorded workflow rather than a sequence of terminal commands.
-- Separate product configuration from network execution.
-- Make authority visible before an operator confirms an irreversible action.
+## Related work
 
-<sub>Public overview only. Source code, customer data, credentials, and private operating details are not included.</sub>
+- [Stablecoin and programmable asset infrastructure](https://github.com/J0UH/stablecoin-infrastructure)
+- [Smart contract operations](https://github.com/J0UH/smart-contract-operations)
+- [Stablecoin as a service](https://github.com/J0UH/stablecoin-service-platform)
 
-## Talk through a similar problem
+Working on a similar problem? [Tell me what you are building](mailto:ju@jomena.group?subject=Programmable%20asset%20issuance).
 
-Working on something similar? [Tell me about it](mailto:ju@jomena.group?subject=Programmable%20asset%20issuance).
+*This is a public account of the work. Source code and private operating details are not included in this repository.*
